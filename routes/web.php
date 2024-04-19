@@ -69,3 +69,8 @@ Route::get('badan/{nama}/{berat}/{tinggi}', function($nama, $bb, $tb){
      "Nilai Bmi : $bmi<br>" .
      "Keterangan : $ket";
 });
+
+// route optional parameter -> ditandai ?
+Route::get('myname/{name?}', function($a = "Aliifah"){
+    return "My Name is $a";
+});

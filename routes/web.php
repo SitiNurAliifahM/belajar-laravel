@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Post;
+use App\Models\Barang;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,4 +74,15 @@ Route::get('badan/{nama}/{berat}/{tinggi}', function($nama, $bb, $tb){
 // route optional parameter -> ditandai ?
 Route::get('myname/{name?}', function($a = "Aliifah"){
     return "My Name is $a";
+});
+
+// menampilkan data dari database
+Route::get('/testmodel', function (){
+    $data = Post::all();
+    return $data; 
+});
+
+Route::get('/testmodelbarang', function (){
+    $data = Barang::all();
+    return $data; 
 });
